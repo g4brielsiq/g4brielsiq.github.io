@@ -1,5 +1,5 @@
 /**
- * PORTFÓLIO LUCAS GABRIEL - JAVASCRIPT OTIMIZADO & PURO
+ * PORTFÓLIO LUCAS GABRIEL - JAVASCRIPT OTIMIZADO & PURO (v3)
  * Execução instantânea, sem bibliotecas externas, compatível com GitHub Pages
  */
 
@@ -106,13 +106,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3200);
   }
 
-  // 4. Download do Currículo (Tratamento seguro e feedback)
+  // 4. Download do Currículo com suporte relativo a components/
   window.baixarCurriculo = function(event) {
-    // Caso o arquivo PDF exista no caminho relativo ./assets/curriculo_lucas_gabriel.pdf
-    const cvPath = "./assets/curriculo_lucas_gabriel.pdf";
+    if (event) event.preventDefault();
+    
+    // Identifica se a execução está em /components/ ou na raiz
+    const isInsideComponents = window.location.pathname.includes('/components/') || window.location.href.includes('/components/');
+    const cvPath = isInsideComponents 
+      ? "../assets/Curriculo_Lucas_Gabriel_Rodrigues_de_Siqueira.pdf" 
+      : "./assets/Curriculo_Lucas_Gabriel_Rodrigues_de_Siqueira.pdf";
+
     const link = document.createElement('a');
     link.href = cvPath;
-    link.download = "Curriculo_Lucas_Gabriel_Siqueira.pdf";
+    link.download = "Curriculo_Lucas_Gabriel_Rodrigues_de_Siqueira.pdf";
     link.target = "_blank";
     document.body.appendChild(link);
     link.click();

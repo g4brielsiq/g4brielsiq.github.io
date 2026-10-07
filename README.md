@@ -8,47 +8,43 @@
 ## 🚀 Tecnologias & Arquitetura
 
 - **Frontend & Web**: HTML5 Semântico, CSS3 Moderno (Custom Properties, Flexbox, Grid), JavaScript (ES6+ Vanilla).
-- **Design System**: Dark Mode elegante com paleta em tons escuros (`#090a0f`, `#11131a`) e contrastes refinados em Vermelho (`#ef4444`) e Cinza (`#9ca3af`).
-- **Performance**: Carregamento instantâneo, zero frameworks pesados, caminhos relativos (`./`) e 100% otimizado para o **GitHub Pages**.
+- **Design System**: Base Dark Tech sofisticada (tons de Esmeralda, Ciano e Dark Slate) com acentos elegantes pontuais em **Vermelho Neon Escuro** (`#f43f5e`, `#be123c`).
+- **Performance**: Carregamento instantâneo, zero frameworks pesados, caminhos relativos (`./` e `../`) e 100% otimizado para o **GitHub Pages**.
 
 ---
 
-## 📁 Estrutura de Arquivos
+## 📁 Estrutura de Diretórios Atualizada
 
-```
+```text
 Portifolio-g4briel/
-├── index.html          # Ponto de entrada principal (compatível com GitHub Pages e Live Server)
-├── port.html           # Espelho direto do arquivo index.html
+├── index.html          # Entrypoint canônico do GitHub Pages (redirecionador leve para components/)
+├── components/
+│   └── index.html      # ARQUIVO PRINCIPAL DO SITE (todo o HTML de construção do portfólio)
 ├── css/
 │   └── style.css       # Estilização Mobile-First otimizada, Grid/Flexbox e variáveis CSS
 ├── js/
 │   └── main.js         # Interações puras (menu mobile, active scroll observer, cópia de e-mail)
 ├── assets/             # Arquivos de mídia e documentos
-│   └── curriculo_lucas_gabriel.pdf  # Seu currículo em PDF para download
+│   └── Curriculo_Lucas_Gabriel_Rodrigues_de_Siqueira.pdf  # Currículo oficial em PDF
+├── backups/            # Histórico de versões preservadas
+│   ├── v1/             # Versão original inicial (Gemini com Chart.js)
+│   └── v2/             # Versão anterior (Dark mode com vermelho dominante)
 └── README.md           # Documentação do projeto
 ```
 
 ---
 
-## 🌐 Como Publicar no GitHub Pages
+## 🌐 Como Funciona no GitHub Pages
 
-1. Faça o commit e push dos arquivos para o seu repositório GitHub (`main`):
-   ```bash
-   git add .
-   git commit -m "feat: design profissional dark mode com vermelho e cinza para github pages"
-   git push origin main
-   ```
-2. No GitHub, acesse o seu repositório: **`g4brielsiq/Portifolio-g4briel`**.
-3. Vá em **Settings** > **Pages** (no menu lateral esquerdo).
-4. Em **Build and deployment**:
-   - **Source**: `Deploy from a branch`
-   - **Branch**: selecione `main` e a pasta `/ (root)`
-5. Clique em **Save**. Em instantes, seu site estará no ar em:
-   `https://g4brielsiq.github.io/Portifolio-g4briel/`
+1. **Configuração Simples**:
+   - No GitHub: **Settings** > **Pages** > **Source**: `Deploy from a branch` > **Branch**: `main` e `/ (root)`.
+2. **Entrada Canônica**:
+   - Ao acessar `https://g4brielsiq.github.io/Portifolio-g4briel/`, o arquivo `index.html` da raiz encaminha instantaneamente o visitante para `/components/index.html`.
+   - O desenvolvimento e a manutenção de páginas HTML acontecem **exclusivamente dentro de `components/`**, cumprindo a regra do projeto sem duplicar código.
 
 ---
 
 ## 💻 Visualização Local (VS Code)
 
-- Abra a pasta do projeto no VS Code.
-- Clique com o botão direito em `index.html` e selecione **"Open with Live Server"**.
+- Abra a pasta `Portifolio-g4briel` no VS Code.
+- Clique com o botão direito em **`components/index.html`** (ou `index.html` na raiz) e selecione **"Open with Live Server"**.

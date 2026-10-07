@@ -20,10 +20,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Estilos com Caminho Relativo para Compatibilidade Total com GitHub Pages -->
+  <!-- Estilos Relativos ao diretório components/ -->
   <link rel="stylesheet" href="../css/style.css">
 
-  <!-- Script Principal Diferido com Caminho Relativo -->
+  <!-- Script Principal Diferido -->
   <script src="../js/main.js" defer></script>
 </head>
 <body>
@@ -43,7 +43,7 @@
     <div class="nav-container">
       <nav class="nav-pill" aria-label="Navegação Principal">
         
-        <!-- Logo / Monograma -->
+        <!-- Logo / Monograma com gradiente refinado -->
         <a href="#inicio" class="nav-logo" title="Voltar ao início">
           <div class="nav-logo-badge">LG</div>
           <span>Lucas Gabriel</span>
@@ -83,7 +83,7 @@
         <a href="#sobre" class="mobile-nav-link">Sobre Mim</a>
         <a href="#stack" class="mobile-nav-link">Tech Stack</a>
         <a href="#projetos" class="mobile-nav-link">Projetos & Pesquisa</a>
-        <a href="#contato" class="mobile-nav-link" style="color: var(--accent-red-light); font-weight: 600;">Entrar em Contato</a>
+        <a href="#contato" class="mobile-nav-link" style="color: var(--accent-emerald-light); font-weight: 600;">Entrar em Contato</a>
       </div>
     </div>
   </header>
@@ -91,13 +91,13 @@
   <main>
     <!-- ========================================================================= -->
     <!-- 1. HERO SECTION (PRIMEIRA DOBRA)                                          -->
-    <!-- Quem sou, o que resolvo e CTAs obrigatórios destacados                     -->
+    <!-- Quem sou, o que resolvo, melhor aproveitamento lateral e 2 CTAs           -->
     <!-- ========================================================================= -->
-    <section id="inicio" class="section hero">
-      <div class="container">
+    <section id="inicio" class="hero">
+      <div class="hero-container">
         <div class="hero-content">
 
-          <!-- Status de Disponibilidade com Pulso -->
+          <!-- Status com Pulso e acento neon equilibrado -->
           <div class="hero-status">
             <span class="status-dot"></span>
             <span>Disponível para Projetos & Novas Oportunidades</span>
@@ -180,7 +180,7 @@
     </section>
 
     <!-- ========================================================================= -->
-    <!-- 2. SOBRE MIM                                                              -->
+    <!-- 2. SOBRE MIM (Transição vertical suave após a Hero Section)               -->
     <!-- Resumo da trajetória técnica e objetivos profissionais                     -->
     <!-- ========================================================================= -->
     <section id="sobre" class="section">
@@ -317,10 +317,10 @@
             </div>
           </div>
 
-          <!-- Categoria 3: IA & Visão Computacional -->
+          <!-- Categoria 3: IA & Visão Computacional (Com destaque sutil neon) -->
           <div class="stack-category-card">
             <div class="category-header">
-              <div class="category-icon">
+              <div class="category-icon" style="background: var(--accent-neon-red-tint); border-color: rgba(244, 63, 94, 0.25); color: var(--accent-neon-red);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V14h3a3 3 0 0 1 3 3v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3a3 3 0 0 1 3-3h3V9.5C8.8 8.8 8 7.5 8 6a4 4 0 0 1 4-4z"></path>
                 </svg>
@@ -328,9 +328,9 @@
               <h3 class="category-title">IA & Visão</h3>
             </div>
             <div class="tags-list">
-              <span class="tech-tag">Deep Metric Learning (DML)</span>
-              <span class="tech-tag">Detecção de Objetos</span>
-              <span class="tech-tag">Edge AI (Mobile Inference)</span>
+              <span class="tech-tag tag-accent-red">Deep Metric Learning (DML)</span>
+              <span class="tech-tag tag-accent-red">Detecção de Objetos</span>
+              <span class="tech-tag tag-accent-red">Edge AI (Mobile Inference)</span>
               <span class="tech-tag">Imagens Biomédicas</span>
               <span class="tech-tag">Bases Desbalanceadas</span>
               <span class="tech-tag">Pipeline de ML</span>

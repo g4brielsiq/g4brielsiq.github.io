@@ -1,1328 +1,689 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth dark">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Gabriel | Desenvolvedor Full Stack & Pesquisador em IA</title>
-    
-    <!-- Meta Tags para SEO & Compartilhamento -->
-    <meta name="description" content="Portfólio de Lucas Gabriel Rodrigues de Siqueira. Desenvolvedor Full Stack e Pesquisador em IA & Visão Computacional. UFAL | Angular 19, NestJS, Python, Edge AI.">
-    <meta name="keywords" content="Lucas Gabriel, Desenvolvedor Full Stack, IA, Visão Computacional, Angular 19, NestJS, FastAPI, UFAL, PIBIC, Deep Metric Learning">
-    <meta property="og:title" content="Lucas Gabriel | Desenvolvedor Full Stack & Pesquisador em IA">
-    <meta property="og:description" content="Engenheiro de Software Full Stack com foco em IA, Edge AI e Arquiteturas Escaláveis. Graduando em Ciência da Computação pela UFAL (IRA 9.2).">
-    <meta property="og:type" content="website">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Gabriel | Desenvolvedor Full Stack & Pesquisador em IA</title>
 
-    <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Metatags para SEO & Compartilhamento -->
+  <meta name="description" content="Portfólio de Lucas Gabriel Rodrigues de Siqueira. Desenvolvedor Full Stack e Pesquisador em Inteligência Artificial & Visão Computacional. UFAL | Angular, NestJS, Python, Edge AI.">
+  <meta name="author" content="Lucas Gabriel Rodrigues de Siqueira">
+  <meta name="keywords" content="Lucas Gabriel, Desenvolvedor Full Stack, Inteligência Artificial, Visão Computacional, Deep Metric Learning, Angular 19, NestJS, Python, FastAPI, UFAL">
 
-    <!-- Tailwind CSS CDN com suporte nativo a Dark Mode via classe -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            200: '#a7f3d0',
-                            300: '#6ee7b7',
-                            400: '#34d399',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                            800: '#065f46',
-                            900: '#064e3b',
-                            accent: '#06b6d4',
-                        }
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-8px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lucas Gabriel | Desenvolvedor Full Stack & Pesquisador em IA">
+  <meta property="og:description" content="Engenheiro de Software Full Stack e Pesquisador em IA/Visão Computacional na UFAL (IRA 9.2). Soluções escaláveis com foco em alto impacto.">
 
-    <style>
-        /* Smooth scrolling e scrollbar personalizada */
-        html {
-            scroll-behavior: smooth;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #090d16;
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: #090d16;
-        }
-        html:not(.dark) ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #10b981;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #059669;
-        }
+  <!-- Tipografia: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-        /* Ambient Glow & Mesh background */
-        .ambient-glow-1 {
-            background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 80%);
-        }
-        .ambient-glow-2 {
-            background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
-        }
+  <!-- Estilos com Caminho Relativo para Compatibilidade Total com GitHub Pages -->
+  <link rel="stylesheet" href="../css/style.css">
 
-        /* Glassmorphism Classes */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-        }
-        .dark .glass-panel {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .dark .glass-card {
-            background: rgba(17, 24, 39, 0.65);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .glass-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(16, 185, 129, 0.4);
-            box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.15);
-        }
-
-        /* Grid Background Pattern */
-        .bg-grid-pattern {
-            background-size: 32px 32px;
-            background-image: 
-                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-        }
-        .dark .bg-grid-pattern {
-            background-size: 32px 32px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        }
-    </style>
+  <!-- Script Principal Diferido com Caminho Relativo -->
+  <script src="../js/main.js" defer></script>
 </head>
-<body class="bg-slate-50 dark:bg-[#070b12] text-slate-800 dark:text-slate-100 font-sans selection:bg-brand-500 selection:text-white transition-colors duration-300 relative overflow-x-hidden min-h-screen">
+<body>
 
-    <!-- Elementos de iluminação de fundo (Ambient Glow) -->
-    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[600px] ambient-glow-1 blur-3xl"></div>
-        <div class="absolute top-1/4 right-0 w-[500px] h-[500px] ambient-glow-2 blur-3xl"></div>
-        <div class="absolute bottom-1/3 left-0 w-[500px] h-[500px] bg-emerald-500/5 blur-3xl"></div>
-    </div>
+  <!-- Toast Notification para feedback instantâneo (ex: cópia de e-mail) -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+    <span id="toast-message">Copiado com sucesso!</span>
+  </div>
 
-    <!-- Padrão sutil de grade no fundo -->
-    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+  <!-- ========================================================================= -->
+  <!-- HEADER & NAVEGAÇÃO FLUTUANTE (FLOATING PILL NAVBAR)                       -->
+  <!-- ========================================================================= -->
+  <header class="header">
+    <div class="nav-container">
+      <nav class="nav-pill" aria-label="Navegação Principal">
+        
+        <!-- Logo / Monograma -->
+        <a href="#inicio" class="nav-logo" title="Voltar ao início">
+          <div class="nav-logo-badge">LG</div>
+          <span>Lucas Gabriel</span>
+        </a>
 
-    <!-- Toast Notification Flutuante para feedback de cópia -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3 rounded-xl bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 font-medium shadow-2xl border border-white/10 text-sm">
-        <svg class="w-5 h-5 text-emerald-400 dark:text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-        </svg>
-        <span id="toast-message">Copiado para a área de transferência!</span>
-    </div>
+        <!-- Links Desktop -->
+        <ul class="nav-links">
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#stack" class="nav-link">Tech Stack</a></li>
+          <li><a href="#projetos" class="nav-link">Projetos</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
 
-    <!-- Header Flutuante (Floating Pill Navbar inspirado na Sarah Aliriel & referências modernas) -->
-    <header class="fixed top-5 left-0 right-0 z-40 px-4 sm:px-6">
-        <div class="max-w-5xl mx-auto">
-            <nav class="glass-panel rounded-full px-5 py-3 shadow-lg flex items-center justify-between transition-all">
-                
-                <!-- Logo & Monograma -->
-                <a href="#inicio" class="flex items-center gap-3 group">
-                    <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-600 via-brand-500 to-brand-accent flex items-center justify-center text-white font-mono font-bold text-sm shadow-md group-hover:scale-105 transition-transform">
-                        LG
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-display font-bold text-sm tracking-tight text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">Lucas Gabriel</span>
-                        <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 -mt-0.5">Full Stack & IA</span>
-                    </div>
-                </a>
+        <!-- Botão CTA Navbar & Toggle Mobile -->
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <a href="#contato" class="nav-contact-btn">
+            <span>Fale Comigo</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
 
-                <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center gap-1 lg:gap-2 text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300">
-                    <a href="#sobre" class="px-3.5 py-1.5 rounded-full hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-all">Sobre</a>
-                    <a href="#projetos" class="px-3.5 py-1.5 rounded-full hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-all">Projetos & Pesquisa</a>
-                    <a href="#skills" class="px-3.5 py-1.5 rounded-full hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-all">Competências</a>
-                    <a href="#experiencia" class="px-3.5 py-1.5 rounded-full hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-all">Trajetória</a>
-                    <a href="#formacao" class="px-3.5 py-1.5 rounded-full hover:text-brand-500 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-all">Formação</a>
-                </div>
-
-                <!-- Ações Direitas: Botão de Tema & CTA Contato -->
-                <div class="flex items-center gap-2 sm:gap-3">
-                    <!-- Toggle Dark/Light Mode -->
-                    <button id="theme-toggle" type="button" aria-label="Alternar tema" class="w-9 h-9 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors border border-slate-200 dark:border-white/10">
-                        <!-- Sun Icon (visível no dark) -->
-                        <svg id="theme-sun" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                        <!-- Moon Icon (visível no light) -->
-                        <svg id="theme-moon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                        </svg>
-                    </button>
-
-                    <!-- CTA Contato Rápido -->
-                    <a href="#contato" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:bg-brand-600 dark:hover:bg-brand-400 dark:hover:text-slate-950 transition-all shadow-sm">
-                        <span>Fale Comigo</span>
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
-
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" type="button" aria-label="Abrir menu" class="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </nav>
-
-            <!-- Mobile Dropdown Navigation -->
-            <div id="mobile-menu" class="hidden md:hidden mt-2 glass-panel rounded-2xl p-4 shadow-xl flex flex-col gap-2 text-sm font-medium">
-                <a href="#sobre" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">Sobre</a>
-                <a href="#projetos" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">Projetos & Pesquisa</a>
-                <a href="#skills" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">Competências</a>
-                <a href="#experiencia" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">Trajetória</a>
-                <a href="#formacao" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">Formação & Acadêmico</a>
-                <a href="#contato" class="mobile-nav-link px-4 py-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 font-semibold transition-colors">Fale Comigo</a>
-            </div>
+          <button id="menu-toggle" class="menu-toggle-btn" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </div>
-    </header>
+      </nav>
+
+      <!-- Menu Mobile Expansível -->
+      <div id="mobile-menu" class="mobile-menu" aria-label="Menu Mobile">
+        <a href="#inicio" class="mobile-nav-link">Início</a>
+        <a href="#sobre" class="mobile-nav-link">Sobre Mim</a>
+        <a href="#stack" class="mobile-nav-link">Tech Stack</a>
+        <a href="#projetos" class="mobile-nav-link">Projetos & Pesquisa</a>
+        <a href="#contato" class="mobile-nav-link" style="color: var(--accent-red-light); font-weight: 600;">Entrar em Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================= -->
+    <!-- 1. HERO SECTION (PRIMEIRA DOBRA)                                          -->
+    <!-- Quem sou, o que resolvo e CTAs obrigatórios destacados                     -->
+    <!-- ========================================================================= -->
+    <section id="inicio" class="section hero">
+      <div class="container">
+        <div class="hero-content">
+
+          <!-- Status de Disponibilidade com Pulso -->
+          <div class="hero-status">
+            <span class="status-dot"></span>
+            <span>Disponível para Projetos & Novas Oportunidades</span>
+          </div>
+
+          <!-- Título Direto e Objetivo -->
+          <div>
+            <h1 class="hero-title">
+              Olá, sou <span class="highlight">Lucas Gabriel</span>.
+            </h1>
+            <h2 class="hero-role" style="margin-top: 0.5rem;">
+              <span>Desenvolvedor Full Stack</span>
+              <span style="color: var(--text-muted);">&bull;</span>
+              <span class="hero-role-badge">IA & Visão Computacional</span>
+            </h2>
+          </div>
+
+          <!-- O que resolvo (Proposta de Valor Clara) -->
+          <p class="hero-desc">
+            Crio <strong>aplicações web de alta performance</strong> e desenvolvo <strong>modelos de Inteligência Artificial</strong> para resolver desafios complexos — desde arquiteturas corporativas <strong>Offline-First</strong> até <strong>diagnósticos biomédicos em Edge AI</strong> para saúde pública.
+          </p>
+
+          <!-- CTAs OBRIGATÓRIOS: 'Ver Projetos' e 'Baixar Currículo' -->
+          <div class="hero-actions">
+            <!-- Botão 1: Destacado 'Ver Projetos' -->
+            <a href="#projetos" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>Ver Projetos</span>
+            </a>
+
+            <!-- Botão 2: Secundário 'Baixar Currículo' -->
+            <button onclick="baixarCurriculo(event)" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Baixar Currículo</span>
+            </button>
+          </div>
+
+          <!-- Links Sociais Rápidos -->
+          <div class="hero-socials">
+            <a href="https://github.com/g4brielsiq" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub (g4brielsiq)" aria-label="GitHub">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/lucasgabrieldeveloper" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+
+            <a href="http://lattes.cnpq.br/0990440691214951" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Currículo Lattes (CNPq)" aria-label="Currículo Lattes">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </a>
+
+            <button onclick="copiarEmail(event)" class="social-icon-btn" title="Copiar E-mail" aria-label="Copiar E-mail">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </button>
+          </div>
 
-    <!-- Main Content Container -->
-    <main class="relative z-10 pt-28 sm:pt-36 pb-20">
-
-        <!-- ============================================== -->
-        <!-- 1. HERO SECTION                               -->
-        <!-- ============================================== -->
-        <section id="inicio" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16 md:pb-24">
-            
-            <!-- Badge de Status Ativo -->
-            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-medium mb-6 animate-pulse-slow">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                <span class="w-2 h-2 rounded-full bg-emerald-500 -ml-4.5"></span>
-                <span>Disponível para Projetos & Oportunidades de Engenharia</span>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                
-                <!-- Informações Principais & Apresentação -->
-                <div class="lg:col-span-8 space-y-6">
-                    <div>
-                        <p class="font-mono text-sm tracking-wider text-slate-500 dark:text-slate-400 uppercase mb-2">
-                            Maceió, AL • Brasil
-                        </p>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
-                            Lucas Gabriel <br class="hidden sm:inline">
-                            <span class="bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent">
-                                Rodrigues de Siqueira
-                            </span>
-                        </h1>
-                        <h2 class="text-lg sm:text-xl font-medium text-slate-700 dark:text-slate-300 mt-4 flex flex-wrap items-center gap-2">
-                            <span>Full Stack Developer</span>
-                            <span class="text-slate-400 dark:text-slate-600">•</span>
-                            <span class="text-brand-600 dark:text-brand-400 font-semibold">Pesquisador em IA & Visão Computacional</span>
-                        </h2>
-                    </div>
-
-                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                        Estudante de Ciência da Computação na <strong class="text-slate-900 dark:text-white font-semibold">UFAL (IRA 9.2)</strong> com experiência no desenvolvimento de aplicações web modernas (<strong class="text-slate-900 dark:text-white font-semibold">Angular 19, NestJS, FastAPI, Vue.js</strong>) e em pesquisa aplicada de <strong class="text-slate-900 dark:text-white font-semibold">Deep Metric Learning e Edge AI</strong> para diagnóstico biomédico em saúde pública.
-                    </p>
-
-                    <!-- CTAs & Ações -->
-                    <div class="flex flex-wrap items-center gap-3 pt-2">
-                        <a href="#projetos" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-600 to-teal-600 text-white font-medium text-sm hover:from-brand-500 hover:to-teal-500 transition-all shadow-lg shadow-brand-500/20 hover:scale-[1.02] active:scale-[0.98]">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
-                            <span>Ver Projetos & Pesquisas</span>
-                        </a>
-
-                        <button onclick="copiarEmail()" type="button" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass-panel text-slate-700 dark:text-slate-200 font-medium text-sm hover:text-brand-500 dark:hover:text-brand-400 transition-all hover:scale-[1.02] active:scale-[0.98]">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                            </svg>
-                            <span>Copiar E-mail</span>
-                        </button>
-
-                        <a href="https://www.linkedin.com/in/lucasgabrieldeveloper" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl glass-panel text-slate-700 dark:text-slate-300 hover:text-[#0077b5] dark:hover:text-[#0a66c2] transition-colors" title="LinkedIn">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://github.com/g4brielsiq" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl glass-panel text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors" title="GitHub">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                            </svg>
-                        </a>
-
-                        <a href="http://lattes.cnpq.br/0990440691214951" target="_blank" rel="noopener noreferrer" class="px-3.5 py-3 rounded-xl glass-panel text-slate-700 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 font-mono text-xs font-semibold transition-colors" title="Currículo Lattes (CNPq)">
-                            Lattes CNPq
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card de Destaques Rápidos / Métricas de Excelência -->
-                <div class="lg:col-span-4">
-                    <div class="glass-card rounded-2xl p-6 relative overflow-hidden shadow-xl border border-brand-500/20">
-                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl"></div>
-                        
-                        <div class="flex items-center gap-3 mb-5 border-b border-slate-200 dark:border-white/10 pb-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center text-brand-600 dark:text-brand-400">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-display font-bold text-slate-900 dark:text-white text-sm">Métricas de Destaque</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">Rigor acadêmico e técnico</p>
-                            </div>
-                        </div>
-
-                        <div class="space-y-4">
-                            <!-- Métrica 1 -->
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2.5">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-                                    <span class="text-xs text-slate-600 dark:text-slate-300">Ciência da Computação (UFAL)</span>
-                                </div>
-                                <span class="font-mono text-xs font-bold text-brand-600 dark:text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded">IRA 9.2</span>
-                            </div>
-
-                            <!-- Métrica 2 -->
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2.5">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                                    <span class="text-xs text-slate-600 dark:text-slate-300">Técnico Informática (IFBA)</span>
-                                </div>
-                                <span class="font-mono text-xs font-bold text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">CRE 9.1</span>
-                            </div>
-
-                            <!-- Métrica 3 -->
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2.5">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                                    <span class="text-xs text-slate-600 dark:text-slate-300">Pesquisa e Bolsas PIBIC</span>
-                                </div>
-                                <span class="font-mono text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">2x Bolsista</span>
-                            </div>
-
-                            <!-- Métrica 4 -->
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2.5">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                                    <span class="text-xs text-slate-600 dark:text-slate-300">Residência TIC (SENAI)</span>
-                                </div>
-                                <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Bolsista TIC</span>
-                            </div>
-                        </div>
-
-                        <!-- Mini nota -->
-                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-white/5 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
-                            <span>Monitor de Matemática Discreta</span>
-                            <span class="font-mono text-slate-400">UFAL</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ============================================== -->
-        <!-- 2. PILARES & SOBRE MIM                        -->
-        <!-- ============================================== -->
-        <section id="sobre" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs font-mono font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full">
-                    Visão & Especialidades
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white mt-3">
-                    Engenharia com Propósito e Rigor Científico
-                </h2>
-                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3">
-                    Construo softwares resilientes unindo a precisão das ciências da computação à agilidade das arquiteturas modernas de mercado.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Pilar 1 -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-5">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">
-                            Desenvolvimento Full Stack
-                        </h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Criação de SPAs reativas com <strong class="text-slate-900 dark:text-white font-medium">Angular 19</strong> (SSR, Standalone Components, novos control flows) e <strong class="text-slate-900 dark:text-white font-medium">Vue.js / React</strong>. Backends escaláveis com <strong class="text-slate-900 dark:text-white font-medium">NestJS</strong>, <strong class="text-slate-900 dark:text-white font-medium">FastAPI</strong> e bancos relacionais.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-white/5 flex flex-wrap gap-1.5 font-mono text-[11px] text-brand-600 dark:text-brand-400">
-                        <span>#OfflineFirst</span>
-                        <span>#CleanCode</span>
-                        <span>#TypeORM</span>
-                    </div>
-                </div>
-
-                <!-- Pilar 2 -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-5">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">
-                            IA & Visão Computacional
-                        </h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Investigação e treino de redes em <strong class="text-slate-900 dark:text-white font-medium">Deep Metric Learning (DML)</strong> e detecção de objetos para classificação de parasitas em microscopia médica. Otimização de inferência para <strong class="text-slate-900 dark:text-white font-medium">Edge AI</strong> em smartphones.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-white/5 flex flex-wrap gap-1.5 font-mono text-[11px] text-cyan-600 dark:text-cyan-400">
-                        <span>#EdgeAI</span>
-                        <span>#ComputerVision</span>
-                        <span>#DeepLearning</span>
-                    </div>
-                </div>
-
-                <!-- Pilar 3 -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-5">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">
-                            Embarcados & Hardware
-                        </h3>
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Controle de automação de microfluídica com <strong class="text-slate-900 dark:text-white font-medium">C++ orientado a objetos</strong> em firmware embarcado, design de placas de circuito impresso (<strong class="text-slate-900 dark:text-white font-medium">EasyEDA PCB</strong>) e interfaces web de telemetria física.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-white/5 flex flex-wrap gap-1.5 font-mono text-[11px] text-indigo-600 dark:text-indigo-400">
-                        <span>#Firmware</span>
-                        <span>#C++</span>
-                        <span>#EasyEDA</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ============================================== -->
-        <!-- 3. PROJETOS & PESQUISAS (FEATURED CASES)       -->
-        <!-- ============================================== -->
-        <section id="projetos" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-                <div>
-                    <span class="text-xs font-mono font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full">
-                        Projetos & Iniciação Científica
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white mt-3">
-                        Casos Reais & Pesquisa Aplicada
-                    </h2>
-                </div>
-
-                <!-- Filtros Interativos de Categorias -->
-                <div class="flex flex-wrap gap-2 text-xs font-medium" id="project-filters">
-                    <button class="filter-btn active px-3.5 py-1.5 rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 transition-all" data-filter="all">Todos</button>
-                    <button class="filter-btn px-3.5 py-1.5 rounded-full glass-panel text-slate-600 dark:text-slate-300 hover:text-brand-500 transition-all" data-filter="ia">IA & Visão</button>
-                    <button class="filter-btn px-3.5 py-1.5 rounded-full glass-panel text-slate-600 dark:text-slate-300 hover:text-brand-500 transition-all" data-filter="web">Full Stack</button>
-                    <button class="filter-btn px-3.5 py-1.5 rounded-full glass-panel text-slate-600 dark:text-slate-300 hover:text-brand-500 transition-all" data-filter="hardware">Embarcados</button>
-                </div>
-            </div>
-
-            <!-- Grid de Projetos -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
-                
-                <!-- PROJETO 1: PIBIC Orion - IA & Visão Computacional -->
-                <article class="project-card glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between" data-category="ia">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full">
-                                🔬 PIBIC/UFAL • Grupo Orion
-                            </span>
-                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">2026 - Presente</span>
-                        </div>
-
-                        <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">
-                            Suporte ao Diagnóstico de Doenças Parasitárias
-                        </h3>
-
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                            Desenvolvimento de algoritmos de <strong>Deep Metric Learning (DML)</strong> e detecção de objetos para classificação automatizada de parasitas em imagens microscópicas biomédicas com bases altamente desbalanceadas.
-                        </p>
-
-                        <!-- Highlights de Engenharia -->
-                        <div class="bg-slate-100/70 dark:bg-slate-800/40 rounded-xl p-3.5 mb-5 space-y-1.5 border border-slate-200 dark:border-white/5">
-                            <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                                <span class="text-brand-500 font-bold">✓</span>
-                                <span>Otimização para <strong>Edge AI</strong>, viabilizando execução leve em smartphones sem dependência constante de conexão de rede.</span>
-                            </div>
-                            <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                                <span class="text-brand-500 font-bold">✓</span>
-                                <span>Integração de dados clínicos e epidemiológicos a um pipeline de inferência ponta a ponta.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <!-- Tags Tecnológicas -->
-                        <div class="flex flex-wrap gap-1.5 pt-2 mb-4">
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Python</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Deep Metric Learning</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Edge AI</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Computer Vision</span>
-                        </div>
-
-                        <!-- Link -->
-                        <div class="border-t border-slate-200 dark:border-white/5 pt-3 flex items-center justify-between text-xs font-medium">
-                            <a href="http://lattes.cnpq.br/0990440691214951" target="_blank" rel="noopener noreferrer" class="text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
-                                <span>Ver no Lattes CNPq</span>
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                            </a>
-                            <span class="font-mono text-[11px] text-slate-400">Saúde Pública</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJETO 2: Plataforma de Gamificação - SENAI / BRISA -->
-                <article class="project-card glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between" data-category="web">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">
-                                🎮 Residência TIC • SENAI Alagoas
-                            </span>
-                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">2025 - 2026</span>
-                        </div>
-
-                        <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">
-                            Jogos Interativos — Gamificação Corporativa
-                        </h3>
-
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                            Plataforma institucional de engajamento e gamificação em equipe de 5 desenvolvedores. Atuação como responsável pela arquitetura frontend e módulos de jogos interativos.
-                        </p>
-
-                        <!-- Highlights de Engenharia -->
-                        <div class="bg-slate-100/70 dark:bg-slate-800/40 rounded-xl p-3.5 mb-5 space-y-1.5 border border-slate-200 dark:border-white/5">
-                            <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                                <span class="text-brand-500 font-bold">✓</span>
-                                <span>Frontend de alta performance em <strong>Angular 19</strong> com SSR, Standalone Components e nova sintaxe de control flow.</span>
-                            </div>
-                            <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                                <span class="text-brand-500 font-bold">✓</span>
-                                <span>Arquitetura <strong>Offline-First</strong> com persistência local e sincronização automática com backend <strong>NestJS + TypeORM</strong>.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <!-- Tags Tecnológicas -->
-                        <div class="flex flex-wrap gap-1.5 pt-2 mb-4">
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Angular 19</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">NestJS</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">PostgreSQL</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Offline-First</span>
-                        </div>
-
-                        <!-- Link -->
-                        <div class="border-t border-slate-200 dark:border-white/5 pt-3 flex items-center justify-between text-xs font-medium">
-                            <span class="text-slate-500 dark:text-slate-400">Dashboards & KPIs em tempo real</span>
-                            <span class="font-mono text-[11px] text-slate-400">BRISA/SOFTEX</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJETO 3: Microfluídica & Automação - GAFM/UFAL -->
-                <article class="project-card glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between" data-category="hardware">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full">
-                                ⚡ PIBIC/UFAL • Microfluídica (GAFM)
-                            </span>
-                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">2025</span>
-                        </div>
-
-                        <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">
-                            Sistema de Controle de Motores para Microfluídica
-                        </h3>
-
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                            Automação de precisão para ensaios experimentais de física acústica e microfluídica. Desenvolvimento de firmware embarcado modular com <strong>C++ e POO</strong>.
-                        </p>
-
-                        <!-- Highlights de Engenharia -->
-                        <div class="bg-slate-100/70 dark:bg-slate-800/40 rounded-xl p-3.5 mb-5 space-y-1.5 border border-slate-200 dark:border-white/5">
-                            <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                                <span class="text-brand-500 font-bold">✓</span>
-                                <span>Design de circuitos eletrônicos e PCBs customizadas utilizando <strong>EasyEDA</strong>.</span>
-                            </div>
-                            <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                                <span class="text-brand-500 font-bold">✓</span>
-                                <span>Desenvolvimento de interface web para controle remoto e algoritmos de calibração física.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <!-- Tags Tecnológicas -->
-                        <div class="flex flex-wrap gap-1.5 pt-2 mb-4">
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">C/C++</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Firmware POO</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">EasyEDA PCB</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Automação Web</span>
-                        </div>
-
-                        <!-- Link -->
-                        <div class="border-t border-slate-200 dark:border-white/5 pt-3 flex items-center justify-between text-xs font-medium">
-                            <span class="text-slate-500 dark:text-slate-400">Instituto de Física UFAL</span>
-                            <span class="font-mono text-[11px] text-slate-400">Precisão Física</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJETO 4: Influir - Automatização de Processos -->
-                <article class="project-card glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between" data-category="web">
-                    <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full">
-                                💼 Influir • Engenharia de Software
-                            </span>
-                            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">2023 - 2024</span>
-                        </div>
-
-                        <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">
-                            Plataforma de Automatização de Processos & APIs
-                        </h3>
-
-                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                            Construção de ecossistema de APIs RESTful de alta performance em <strong>FastAPI (Python)</strong> com interfaces dinâmicas em <strong>Vue.js</strong>.
-                        </p>
-
-                        <!-- Highlights de Engenharia -->
-                        <div class="bg-slate-100/70 dark:bg-slate-800/40 rounded-xl p-3.5 mb-5 space-y-1.5 border border-slate-200 dark:border-white/5">
-                            <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                                <span class="text-brand-500 font-bold">✓</span>
-                                <span>Implementação de autenticação e autorização via <strong>JWT</strong> e otimização de consultas SQL.</span>
-                            </div>
-                            <div class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
-                                <span class="text-brand-500 font-bold">✓</span>
-                                <span>Fluxo de entrega ágil com Scrum, versionamento em equipe com <strong>GitFlow</strong> e testes de homologação.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <!-- Tags Tecnológicas -->
-                        <div class="flex flex-wrap gap-1.5 pt-2 mb-4">
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Python</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">FastAPI</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">Vue.js</span>
-                            <span class="px-2.5 py-1 rounded-md font-mono text-[11px] bg-slate-200/60 dark:bg-white/5 text-slate-700 dark:text-slate-300">PostgreSQL</span>
-                        </div>
-
-                        <!-- Link -->
-                        <div class="border-t border-slate-200 dark:border-white/5 pt-3 flex items-center justify-between text-xs font-medium">
-                            <span class="text-slate-500 dark:text-slate-400">Ambiente de Produção Ágil</span>
-                            <span class="font-mono text-[11px] text-slate-400">GitFlow & JWT</span>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-
-        <!-- ============================================== -->
-        <!-- 4. COMPETÊNCIAS TÉCNICAS (ORGANIZED STACK)     -->
-        <!-- ============================================== -->
-        <section id="skills" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs font-mono font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full">
-                    Tech Stack & Ferramentas
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white mt-3">
-                    Competências Técnicas
-                </h2>
-                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3">
-                    Tecnologias utilizadas no dia a dia em produção, pesquisa científica e desenvolvimento de sistemas.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Coluna 1: Frontend -->
-                <div class="glass-card rounded-2xl p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-sm">
-                            &lt;/&gt;
-                        </div>
-                        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Frontend</h3>
-                    </div>
-                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-                            <span><strong>Angular 19</strong> (SSR, Standalone)</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-                            <span>React.js</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-                            <span>Vue.js</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-                            <span>Tailwind CSS</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-                            <span>HTML5 / CSS3 / Figma</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Coluna 2: Backend & APIs -->
-                <div class="glass-card rounded-2xl p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center font-bold text-sm">
-                            ⚙️
-                        </div>
-                        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">Backend & APIs</h3>
-                    </div>
-                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                            <span><strong>NestJS</strong> & Node.js</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                            <span><strong>FastAPI</strong> & Python</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                            <span>Java & Spring Boot</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                            <span>APIs RESTful & Microservices</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                            <span>Arquitetura Offline-First</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Coluna 3: Banco de Dados & IA -->
-                <div class="glass-card rounded-2xl p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-9 h-9 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center font-bold text-sm">
-                            🧠
-                        </div>
-                        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">IA & Bancos</h3>
-                    </div>
-                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                            <span>Deep Metric Learning (DML)</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                            <span>Edge AI & Detecção Objetos</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                            <span>PostgreSQL & MySQL</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                            <span>TypeORM & Modelagem SQL</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                            <span>Processamento Biomédico</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Coluna 4: DevOps, Hardware & Fundamentos -->
-                <div class="glass-card rounded-2xl p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-sm">
-                            📦
-                        </div>
-                        <h3 class="font-display font-bold text-base text-slate-900 dark:text-white">DevOps & Fundamentos</h3>
-                    </div>
-                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                            <span>Docker & Linux</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                            <span>Git, GitHub & GitFlow</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                            <span>C/C++ & Firmware Embarcado</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                            <span>Design de PCBs (EasyEDA)</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                            <span>Estruturas de Dados & Grafos</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ============================================== -->
-        <!-- 5. TRAJETÓRIA PROFISSIONAL & TIMELINE          -->
-        <!-- ============================================== -->
-        <section id="experiencia" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs font-mono font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full">
-                    Experiência Profissional
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white mt-3">
-                    Histórico & Atuação
-                </h2>
-                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3">
-                    Experiência prática adquirida em projetos industriais, residência tecnológica e laboratórios de ponta.
-                </p>
-            </div>
-
-            <!-- Timeline Vertical Moderna -->
-            <div class="relative border-l-2 border-slate-200 dark:border-white/10 ml-4 sm:ml-8 md:ml-32 space-y-12">
-                
-                <!-- 1. PIBIC Orion -->
-                <div class="relative pl-6 sm:pl-8 group">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 border-4 border-slate-50 dark:border-[#070b12] group-hover:scale-125 transition-transform"></div>
-                    
-                    <span class="md:absolute md:-left-32 md:top-1 font-mono text-xs text-cyan-600 dark:text-cyan-400 block mb-1">
-                        Jan 2026 – Hoje
-                    </span>
-
-                    <div class="glass-card rounded-2xl p-6">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">
-                                Bolsista de Iniciação Científica em IA e Visão Computacional
-                            </h3>
-                            <span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-semibold">
-                                PIBIC / UFAL
-                            </span>
-                        </div>
-                        <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-4">
-                            Grupo Orion • Maceió, AL
-                        </p>
-                        
-                        <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 mb-2 uppercase tracking-wider font-mono">
-                            Projeto: "Suporte ao Diagnóstico de Doenças Parasitárias"
-                        </p>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-start gap-2">
-                                <span class="text-cyan-500 mt-1">▸</span>
-                                <span>Desenvolvimento de algoritmos de <strong>Deep Metric Learning (DML)</strong> e detecção de objetos para classificação de parasitas em imagens microscópicas biomédicas.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-cyan-500 mt-1">▸</span>
-                                <span>Otimização de modelos preditivos para <strong>Edge AI</strong>, viabilizando execução em smartphones com hardware limitado.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-cyan-500 mt-1">▸</span>
-                                <span>Tratamento de bases de dados altamente desbalanceadas e integração a pipeline de diagnóstico automatizado.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 2. Residência TIC BRISA/SENAI -->
-                <div class="relative pl-6 sm:pl-8 group">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-slate-50 dark:border-[#070b12] group-hover:scale-125 transition-transform"></div>
-                    
-                    <span class="md:absolute md:-left-32 md:top-1 font-mono text-xs text-emerald-600 dark:text-emerald-400 block mb-1">
-                        Nov 2025 – Jun 2026
-                    </span>
-
-                    <div class="glass-card rounded-2xl p-6">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">
-                                Bolsista de Residência em TIC — Programa BRISA / SENAI
-                            </h3>
-                            <span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold">
-                                SENAI Alagoas / SOFTEX
-                            </span>
-                        </div>
-                        <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-4">
-                            Programa EASY-UFAL / SOFTEX / SENAI • Maceió, AL
-                        </p>
-
-                        <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 mb-2 uppercase tracking-wider font-mono">
-                            Projeto: "Jogos Interativos" — Plataforma de Gamificação Institucional
-                        </p>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-start gap-2">
-                                <span class="text-emerald-500 mt-1">▸</span>
-                                <span>Integração de equipe de 5 desenvolvedores, atuando como responsável pela integração do frontend em <strong>Angular 19</strong> (SSR, Standalone Components, novo control flow) e funcionalidades de jogos.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-emerald-500 mt-1">▸</span>
-                                <span>Implementação de arquitetura <strong>Offline-First</strong> com persistência local e sincronização automática de dados.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-emerald-500 mt-1">▸</span>
-                                <span>Construção de dashboards administrativos com KPIs em tempo real e integração via APIs REST (NestJS, TypeORM, PostgreSQL) para sistemas ERP/CRM.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 3. GAFM Microfluídica -->
-                <div class="relative pl-6 sm:pl-8 group">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-50 dark:border-[#070b12] group-hover:scale-125 transition-transform"></div>
-                    
-                    <span class="md:absolute md:-left-32 md:top-1 font-mono text-xs text-indigo-600 dark:text-indigo-400 block mb-1">
-                        Set 2025 – Dez 2025
-                    </span>
-
-                    <div class="glass-card rounded-2xl p-6">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">
-                                Bolsista de IC em Sistemas Embarcados e Automação
-                            </h3>
-                            <span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-semibold">
-                                GAFM / UFAL
-                            </span>
-                        </div>
-                        <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-4">
-                            Grupo de Acústica Física & Microfluídica • Instituto de Física – UFAL
-                        </p>
-
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-start gap-2">
-                                <span class="text-indigo-500 mt-1">▸</span>
-                                <span>Desenvolvimento de sistema de controle de motores de passo para microfluídica com C++ POO em firmware.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-indigo-500 mt-1">▸</span>
-                                <span>Projeto de circuitos impressos (PCBs) no EasyEDA e integração para automação de instrumentação de precisão.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-indigo-500 mt-1">▸</span>
-                                <span>Interface web para comando remoto e implementação de algoritmos de calibração física.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 4. Influir -->
-                <div class="relative pl-6 sm:pl-8 group">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-slate-50 dark:border-[#070b12] group-hover:scale-125 transition-transform"></div>
-                    
-                    <span class="md:absolute md:-left-32 md:top-1 font-mono text-xs text-amber-600 dark:text-amber-400 block mb-1">
-                        Out 2023 – Abr 2024
-                    </span>
-
-                    <div class="glass-card rounded-2xl p-6">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">
-                                Desenvolvedor Full Stack
-                            </h3>
-                            <span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 font-semibold">
-                                Influir Automatização
-                            </span>
-                        </div>
-                        <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mb-4">
-                            Influir – Automatização de Processos • Aracaju, SE
-                        </p>
-
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-start gap-2">
-                                <span class="text-amber-500 mt-1">▸</span>
-                                <span>Desenvolvimento de APIs e interfaces com <strong>Python, JavaScript, Vue.js e FastAPI</strong>, participando das decisões de arquitetura.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-amber-500 mt-1">▸</span>
-                                <span>Implementação de autenticação e autorização via JWT, reforçando a segurança das aplicações.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-amber-500 mt-1">▸</span>
-                                <span>Atuação em sprints ágeis (Scrum), versionamento de código em equipe com GitFlow e homologação de APIs.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ============================================== -->
-        <!-- 6. FORMAÇÃO ACADÊMICA & IDIOMAS               -->
-        <!-- ============================================== -->
-        <section id="formacao" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs font-mono font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full">
-                    Educação & Competências Linguísticas
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white mt-3">
-                    Formação Acadêmica
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                
-                <!-- UFAL -->
-                <div class="glass-card rounded-2xl p-6 sm:p-7 relative overflow-hidden">
-                    <div class="flex items-start justify-between gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-xl">
-                            🎓
-                        </div>
-                        <span class="font-mono text-xs font-bold px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400">
-                            IRA 9.2 / 10
-                        </span>
-                    </div>
-
-                    <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">
-                        Bacharelado em Ciência da Computação
-                    </h3>
-                    <p class="text-sm font-medium text-brand-600 dark:text-brand-400 mb-3">
-                        Universidade Federal de Alagoas (UFAL)
-                    </p>
-                    <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mb-4">
-                        Jan 2024 – Dez 2028 (Cursando)
-                    </p>
-
-                    <div class="pt-3 border-t border-slate-200 dark:border-white/5 text-sm text-slate-600 dark:text-slate-300">
-                        <p class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-                            <span><strong>Monitor de Matemática Discreta</strong></span>
-                        </p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">
-                            Foco em fundamentos de computação, teoria dos grafos, algoritmos avançados e inteligência artificial.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- IFBA -->
-                <div class="glass-card rounded-2xl p-6 sm:p-7 relative overflow-hidden">
-                    <div class="flex items-start justify-between gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl">
-                            🏛️
-                        </div>
-                        <span class="font-mono text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">
-                            CRE 9.1 / 10
-                        </span>
-                    </div>
-
-                    <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">
-                        Técnico em Informática
-                    </h3>
-                    <p class="text-sm font-medium text-cyan-600 dark:text-cyan-400 mb-3">
-                        Instituto Federal da Bahia (IFBA)
-                    </p>
-                    <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mb-4">
-                        Jul 2019 – Fev 2024 (Concluído)
-                    </p>
-
-                    <div class="pt-3 border-t border-slate-200 dark:border-white/5 text-sm text-slate-600 dark:text-slate-300">
-                        <p class="text-xs text-slate-500 dark:text-slate-400">
-                            Base técnica sólida construída desde o início da formação: estruturas de dados, orientação a objetos, redes, banco de dados e sistemas operacionais.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Idiomas Cards -->
-            <div class="glass-card rounded-2xl p-6">
-                <h3 class="font-display font-bold text-base text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                    <span>🌐</span>
-                    <span>Idiomas & Comunicação</span>
-                </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div class="p-3.5 rounded-xl bg-slate-100/70 dark:bg-white/5 border border-slate-200 dark:border-white/5">
-                        <span class="text-xs font-mono text-slate-500 dark:text-slate-400 block mb-1">Português</span>
-                        <span class="text-sm font-semibold text-slate-900 dark:text-white">Nativo</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl bg-slate-100/70 dark:bg-white/5 border border-slate-200 dark:border-white/5">
-                        <span class="text-xs font-mono text-slate-500 dark:text-slate-400 block mb-1">Inglês</span>
-                        <span class="text-sm font-semibold text-slate-900 dark:text-white">Nível Profissional</span>
-                        <span class="text-[10px] text-slate-500 block">Professional Working Proficiency</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl bg-slate-100/70 dark:bg-white/5 border border-slate-200 dark:border-white/5">
-                        <span class="text-xs font-mono text-slate-500 dark:text-slate-400 block mb-1">Espanhol</span>
-                        <span class="text-sm font-semibold text-slate-900 dark:text-white">Nível Profissional</span>
-                        <span class="text-[10px] text-slate-500 block">Professional Working Proficiency</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ============================================== -->
-        <!-- 7. CONTATO & CONEXÃO                          -->
-        <!-- ============================================== -->
-        <section id="contato" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
-            <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-brand-500/20 shadow-2xl">
-                <div class="absolute -top-24 -right-24 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
-                    <div class="lg:col-span-7 space-y-4">
-                        <span class="text-xs font-mono font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400 bg-brand-500/10 px-3 py-1 rounded-full">
-                            Vamos Conversar?
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
-                            Interessado em colaborar em novos projetos de software ou IA?
-                        </h2>
-                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Estou aberto a oportunidades profissionais, colaborações técnicas em engenharia de software e pesquisa. Sinta-se à vontade para me mandar uma mensagem direta por e-mail, WhatsApp ou conectar-se no LinkedIn.
-                        </p>
-
-                        <!-- Botões de Conexão Rápida -->
-                        <div class="flex flex-wrap gap-3 pt-4">
-                            <button onclick="copiarEmail()" type="button" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm transition-all shadow-lg shadow-brand-500/20">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                </svg>
-                                <span>Copiar g4brielsiqueira@gmail.com</span>
-                            </button>
-
-                            <a href="https://wa.me/5582999777346?text=Ol%C3%A1%20Lucas,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm transition-all shadow-lg shadow-emerald-600/20">
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                </svg>
-                                <span>WhatsApp Direto</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card de Contatos Diretos -->
-                    <div class="lg:col-span-5 bg-slate-100/80 dark:bg-slate-900/80 rounded-2xl p-6 border border-slate-200 dark:border-white/10 space-y-4">
-                        <h4 class="font-display font-bold text-slate-900 dark:text-white text-sm uppercase tracking-wider">
-                            Canais Oficiais
-                        </h4>
-
-                        <div class="space-y-3 text-sm">
-                            <a href="mailto:g4brielsiqueira@gmail.com" class="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-white/5 hover:border-brand-500 border border-slate-200 dark:border-white/5 transition-colors">
-                                <span class="text-brand-500 text-lg">✉️</span>
-                                <div class="overflow-hidden">
-                                    <span class="block text-xs text-slate-400">E-mail Profissional</span>
-                                    <span class="font-medium text-slate-800 dark:text-slate-200 truncate block">g4brielsiqueira@gmail.com</span>
-                                </div>
-                            </a>
-
-                            <a href="https://www.linkedin.com/in/lucasgabrieldeveloper" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-white/5 hover:border-[#0a66c2] border border-slate-200 dark:border-white/5 transition-colors">
-                                <span class="text-blue-500 text-lg">💼</span>
-                                <div class="overflow-hidden">
-                                    <span class="block text-xs text-slate-400">LinkedIn</span>
-                                    <span class="font-medium text-slate-800 dark:text-slate-200 truncate block">in/lucasgabrieldeveloper</span>
-                                </div>
-                            </a>
-
-                            <a href="https://github.com/g4brielsiq" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-white/5 hover:border-slate-500 border border-slate-200 dark:border-white/5 transition-colors">
-                                <span class="text-slate-700 dark:text-slate-300 text-lg">🐙</span>
-                                <div class="overflow-hidden">
-                                    <span class="block text-xs text-slate-400">GitHub</span>
-                                    <span class="font-medium text-slate-800 dark:text-slate-200 truncate block">github.com/g4brielsiq</span>
-                                </div>
-                            </a>
-
-                            <a href="http://lattes.cnpq.br/0990440691214951" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-white/5 hover:border-emerald-500 border border-slate-200 dark:border-white/5 transition-colors">
-                                <span class="text-emerald-500 text-lg">📄</span>
-                                <div class="overflow-hidden">
-                                    <span class="block text-xs text-slate-400">Currículo Lattes (CNPq)</span>
-                                    <span class="font-medium text-slate-800 dark:text-slate-200 truncate block">0990440691214951</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="relative z-10 border-t border-slate-200 dark:border-white/10 py-10 bg-slate-100/50 dark:bg-slate-950/50 text-xs text-slate-500 dark:text-slate-400">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <span class="w-7 h-7 rounded-full bg-brand-500/20 text-brand-500 flex items-center justify-center font-mono font-bold text-xs">
-                    LG
-                </span>
-                <p>© 2026 Lucas Gabriel Rodrigues de Siqueira. Maceió, AL.</p>
-            </div>
-
-            <div class="flex items-center gap-6">
-                <a href="#inicio" class="hover:text-brand-500 transition-colors">Voltar ao topo ↑</a>
-                <a href="https://github.com/g4brielsiq" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors">GitHub</a>
-                <a href="https://www.linkedin.com/in/lucasgabrieldeveloper" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors">LinkedIn</a>
-                <a href="http://lattes.cnpq.br/0990440691214951" target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 transition-colors">Lattes</a>
-            </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- JavaScript para Interatividade Fluida -->
-    <script>
-        // 1. Gerenciamento de Tema (Dark / Light Mode)
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
+    <!-- ========================================================================= -->
+    <!-- 2. SOBRE MIM                                                              -->
+    <!-- Resumo da trajetória técnica e objetivos profissionais                     -->
+    <!-- ========================================================================= -->
+    <section id="sobre" class="section">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-badge">Trajetória & Foco</span>
+          <h2 class="section-title">Sobre Mim</h2>
+          <p class="section-desc">
+            Construo a ponte entre fundamentação matemática e engenharia de software aplicada para criar sistemas robustos e velozes.
+          </p>
+        </div>
 
-        // Recuperar preferência salva ou respeitar sistema operacional
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            htmlElement.classList.remove('dark');
-        } else {
-            // Default dark para estética moderna de desenvolvedor
-            htmlElement.classList.add('dark');
-        }
+        <div class="about-grid">
+          
+          <!-- Narrativa Profissional -->
+          <div class="about-text-card">
+            <p>
+              Sou desenvolvedor Full Stack e graduando em <strong>Ciência da Computação pela UFAL</strong> (com índice de rendimento acadêmico <strong>IRA 9.2/10</strong> e atuação como <strong>Monitor de Matemática Discreta</strong>), tendo formado minha base técnica com CRE 9.1/10 no <strong>IFBA</strong>.
+            </p>
+            <p>
+              Minha atuação prática une o desenvolvimento de <strong>ecossistemas web modernos</strong> (Angular 19, NestJS, React, Vue.js, FastAPI) com <strong>pesquisa aplicada em Visão Computacional e Deep Learning</strong>. Em experiências recentes, atuei como responsável pelo frontend e arquitetura <strong>Offline-First</strong> em uma plataforma de gamificação corporativa para o SENAI Alagoas, e atualmente desenvolvo modelos de <strong>Deep Metric Learning</strong> para diagnóstico médico em <strong>Edge AI</strong> pelo PIBIC/UFAL (Grupo Orion).
+            </p>
+            <p>
+              <strong>Objetivo Profissional:</strong> Busco posições e desafios em Engenharia de Software que integrem desenvolvimento Full Stack com aplicações práticas de Inteligência Artificial, gerando impacto tangível em usabilidade, escalabilidade e negócio.
+            </p>
+          </div>
 
-        themeToggleBtn.addEventListener('click', () => {
-            if (htmlElement.classList.contains('dark')) {
-                htmlElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                htmlElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        // 2. Menu Mobile Drawer
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // 3. Filtro de Categorias de Projetos
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-slate-900');
-                    b.classList.add('glass-panel', 'text-slate-600', 'dark:text-slate-300');
-                });
-
-                btn.classList.add('active', 'bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-slate-900');
-                btn.classList.remove('glass-panel', 'text-slate-600', 'dark:text-slate-300');
-
-                const filter = btn.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    if (filter === 'all' || category === filter) {
-                        card.style.display = 'flex';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(10px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 200);
-                    }
-                });
-            });
-        });
-
-        // 4. Função para Copiar E-mail com Toast
-        function copiarEmail() {
-            const email = "g4brielsiqueira@gmail.com";
-            navigator.clipboard.writeText(email).then(() => {
-                showToast("E-mail copiado com sucesso! (" + email + ")");
-            }).catch(() => {
-                // Fallback caso clipboard API falhe
-                const tempInput = document.createElement("input");
-                tempInput.value = email;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand("copy");
-                document.body.removeChild(tempInput);
-                showToast("E-mail copiado com sucesso! (" + email + ")");
-            });
-        }
-
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toast-message');
-            toastMessage.textContent = message;
+          <!-- Métricas e Autoridade Técnica -->
+          <div class="about-highlights-card">
             
-            toast.classList.remove('translate-y-24', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
+            <div class="stat-item">
+              <div class="stat-info">
+                <h4>Ciência da Computação (UFAL)</h4>
+                <p>Monitor de Matemática Discreta</p>
+              </div>
+              <span class="stat-badge">IRA 9.2</span>
+            </div>
 
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-24', 'opacity-0');
-            }, 3000);
-        }
-    </script>
+            <div class="stat-item">
+              <div class="stat-info">
+                <h4>Técnico em Informática (IFBA)</h4>
+                <p>Base sólida em algoritmos e sistemas</p>
+              </div>
+              <span class="stat-badge">CRE 9.1</span>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-info">
+                <h4>Pesquisa & Iniciação Científica</h4>
+                <p>PIBIC Grupo Orion (IA) & GAFM (Embarcados)</p>
+              </div>
+              <span class="stat-badge">2x Bolsista</span>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-info">
+                <h4>Residência em TIC (SENAI / BRISA)</h4>
+                <p>Gamificação Corporativa e Offline-First</p>
+              </div>
+              <span class="stat-badge">Bolsista TIC</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 3. TECH STACK                                                             -->
+    <!-- Organizado por categorias, tags e ícones limpos (SEM porcentagens)        -->
+    <!-- ========================================================================= -->
+    <section id="stack" class="section">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-badge">Habilidades Técnicas</span>
+          <h2 class="section-title">Tech Stack</h2>
+          <p class="section-desc">
+            Ferramentas, linguagens e frameworks dominados e utilizados em projetos de produção e laboratório.
+          </p>
+        </div>
+
+        <div class="stack-grid">
+          
+          <!-- Categoria 1: Frontend & Web -->
+          <div class="stack-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="category-title">Frontend & Web</h3>
+            </div>
+            <div class="tags-list">
+              <span class="tech-tag">Angular 19 (SSR)</span>
+              <span class="tech-tag">Standalone Components</span>
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">JavaScript (ES6+)</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">HTML5 / CSS3</span>
+              <span class="tech-tag">Figma</span>
+            </div>
+          </div>
+
+          <!-- Categoria 2: Backend & APIs -->
+          <div class="stack-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3 class="category-title">Backend & APIs</h3>
+            </div>
+            <div class="tags-list">
+              <span class="tech-tag">NestJS</span>
+              <span class="tech-tag">FastAPI (Python)</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">APIs RESTful</span>
+              <span class="tech-tag">Arquitetura Offline-First</span>
+              <span class="tech-tag">Autenticação JWT</span>
+              <span class="tech-tag">SPA Architecture</span>
+            </div>
+          </div>
+
+          <!-- Categoria 3: IA & Visão Computacional -->
+          <div class="stack-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V14h3a3 3 0 0 1 3 3v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3a3 3 0 0 1 3-3h3V9.5C8.8 8.8 8 7.5 8 6a4 4 0 0 1 4-4z"></path>
+                </svg>
+              </div>
+              <h3 class="category-title">IA & Visão</h3>
+            </div>
+            <div class="tags-list">
+              <span class="tech-tag">Deep Metric Learning (DML)</span>
+              <span class="tech-tag">Detecção de Objetos</span>
+              <span class="tech-tag">Edge AI (Mobile Inference)</span>
+              <span class="tech-tag">Imagens Biomédicas</span>
+              <span class="tech-tag">Bases Desbalanceadas</span>
+              <span class="tech-tag">Pipeline de ML</span>
+            </div>
+          </div>
+
+          <!-- Categoria 4: Bancos de Dados -->
+          <div class="stack-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h3 class="category-title">Bancos & ORM</h3>
+            </div>
+            <div class="tags-list">
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">TypeORM</span>
+              <span class="tech-tag">Otimização de Consultas SQL</span>
+              <span class="tech-tag">Modelagem Relacional</span>
+            </div>
+          </div>
+
+          <!-- Categoria 5: Embarcados & Hardware -->
+          <div class="stack-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="category-title">Embarcados & IoT</h3>
+            </div>
+            <div class="tags-list">
+              <span class="tech-tag">C / C++</span>
+              <span class="tech-tag">Firmware com POO</span>
+              <span class="tech-tag">Design de PCB (EasyEDA)</span>
+              <span class="tech-tag">Microfluídica</span>
+              <span class="tech-tag">Controle de Motores de Passo</span>
+              <span class="tech-tag">Telemetria Web</span>
+            </div>
+          </div>
+
+          <!-- Categoria 6: DevOps & Fundamentos -->
+          <div class="stack-category-card">
+            <div class="category-header">
+              <div class="category-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+              </div>
+              <h3 class="category-title">DevOps & Engenharia</h3>
+            </div>
+            <div class="tags-list">
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Git / GitHub / GitFlow</span>
+              <span class="tech-tag">CI/CD</span>
+              <span class="tech-tag">Linux</span>
+              <span class="tech-tag">Estruturas de Dados</span>
+              <span class="tech-tag">Teoria dos Grafos</span>
+              <span class="tech-tag">Metodologias Ágeis (Scrum)</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4. PROJETOS                                                               -->
+    <!-- Título, Problema que resolve, Tags e 2 botões claros (GitHub & Deploy)     -->
+    <!-- ========================================================================= -->
+    <section id="projetos" class="section">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-badge">Projetos & Pesquisa</span>
+          <h2 class="section-title">Projetos em Destaque</h2>
+          <p class="section-desc">
+            Aplicações e pesquisas focadas na resolução de problemas reais de saúde pública, indústria e automação.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- PROJETO 1: PIBIC Orion (IA & Visão Computacional) -->
+          <article class="project-card">
+            <div>
+              <div class="project-meta">
+                <span class="project-institution">PIBIC/UFAL • Grupo Orion</span>
+                <span class="project-year">2026 – Presente</span>
+              </div>
+
+              <h3 class="project-title">Diagnóstico Automatizado de Doenças Parasitárias</h3>
+
+              <p class="project-problem">
+                <strong>Problema que resolve:</strong> Laboratórios em regiões remotas e postos de saúde pública enfrentam lentidão e falta de especialistas para analisar amostras de microscopia óptica. O projeto desenvolveu modelos de <strong>Deep Metric Learning (DML)</strong> e detecção de objetos otimizados para <strong>Edge AI</strong>, viabilizando triagens rápidas diretamente em smartphones acessíveis sem depender de computação em nuvem pesada.
+              </p>
+
+              <div class="project-techs">
+                <span class="project-tech-badge">Python</span>
+                <span class="project-tech-badge">Deep Metric Learning</span>
+                <span class="project-tech-badge">Edge AI</span>
+                <span class="project-tech-badge">Visão Computacional</span>
+                <span class="project-tech-badge">Saúde Pública</span>
+              </div>
+            </div>
+
+            <!-- Dois Botões Obrigatórios: 'Ver Código (GitHub)' e 'Aplicação Rodando (Deploy/Live)' -->
+            <div class="project-buttons">
+              <a href="https://github.com/g4brielsiq" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-code">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span>Ver Código (GitHub)</span>
+              </a>
+
+              <a href="http://lattes.cnpq.br/0990440691214951" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-live">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Aplicação Rodando (Deploy/Live)</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- PROJETO 2: Plataforma de Gamificação (SENAI Alagoas / BRISA) -->
+          <article class="project-card">
+            <div>
+              <div class="project-meta">
+                <span class="project-institution">Residência TIC • SENAI Alagoas</span>
+                <span class="project-year">2025 – 2026</span>
+              </div>
+
+              <h3 class="project-title">Jogos Interativos — Gamificação Corporativa</h3>
+
+              <p class="project-problem">
+                <strong>Problema que resolve:</strong> Baixo engajamento em treinamentos industriais e perda de dados de progresso quando os colaboradores utilizam dispositivos com internet instável. Foi implementada uma arquitetura <strong>Offline-First</strong> em <strong>Angular 19</strong> e <strong>NestJS</strong> com persistência local e sincronização automática, além de dashboards de KPIs em tempo real e exportação para ERP.
+              </p>
+
+              <div class="project-techs">
+                <span class="project-tech-badge">Angular 19</span>
+                <span class="project-tech-badge">NestJS</span>
+                <span class="project-tech-badge">Offline-First</span>
+                <span class="project-tech-badge">PostgreSQL</span>
+                <span class="project-tech-badge">TypeORM</span>
+              </div>
+            </div>
+
+            <!-- Dois Botões Obrigatórios: 'Ver Código (GitHub)' e 'Aplicação Rodando (Deploy/Live)' -->
+            <div class="project-buttons">
+              <a href="https://github.com/g4brielsiq" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-code">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span>Ver Código (GitHub)</span>
+              </a>
+
+              <a href="https://github.com/g4brielsiq/Portifolio-g4briel" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-live">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Aplicação Rodando (Deploy/Live)</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- PROJETO 3: Microfluídica & Automação (PIBIC/UFAL - GAFM) -->
+          <article class="project-card">
+            <div>
+              <div class="project-meta">
+                <span class="project-institution">PIBIC/UFAL • GAFM / Física</span>
+                <span class="project-year">2025</span>
+              </div>
+
+              <h3 class="project-title">Sistema de Automação de Microfluídica</h3>
+
+              <p class="project-problem">
+                <strong>Problema que resolve:</strong> Falta de precisão e risco de erro humano no controle manual do fluxo em ensaios laboratoriais de acústica física. O sistema implementou controle micrométrico de motores de passo com firmware modular em <strong>C++ (POO)</strong>, placas de circuito impresso customizadas no <strong>EasyEDA</strong> e interface web para comando e calibração física remota.
+              </p>
+
+              <div class="project-techs">
+                <span class="project-tech-badge">C / C++</span>
+                <span class="project-tech-badge">Firmware Embarcado</span>
+                <span class="project-tech-badge">EasyEDA (PCB)</span>
+                <span class="project-tech-badge">Interface Web</span>
+                <span class="project-tech-badge">Microfluídica</span>
+              </div>
+            </div>
+
+            <!-- Dois Botões Obrigatórios: 'Ver Código (GitHub)' e 'Aplicação Rodando (Deploy/Live)' -->
+            <div class="project-buttons">
+              <a href="https://github.com/g4brielsiq" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-code">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span>Ver Código (GitHub)</span>
+              </a>
+
+              <a href="http://lattes.cnpq.br/0990440691214951" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-live">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Aplicação Rodando (Deploy/Live)</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- PROJETO 4: Influir - Automação de Processos -->
+          <article class="project-card">
+            <div>
+              <div class="project-meta">
+                <span class="project-institution">Influir • Process Automation</span>
+                <span class="project-year">2023 – 2024</span>
+              </div>
+
+              <h3 class="project-title">Ecossistema de Automação de Processos & APIs</h3>
+
+              <p class="project-problem">
+                <strong>Problema que resolve:</strong> Gargalos de produtividade decorrentes de fluxos manuais e lentidão em integrações corporativas. Construção de microsserviços e APIs assíncronas em <strong>FastAPI (Python)</strong> com interfaces reativas em <strong>Vue.js</strong>, autenticação robusta via <strong>JWT</strong> e otimização de consultas de banco de dados em <strong>PostgreSQL</strong>.
+              </p>
+
+              <div class="project-techs">
+                <span class="project-tech-badge">Python</span>
+                <span class="project-tech-badge">FastAPI</span>
+                <span class="project-tech-badge">Vue.js</span>
+                <span class="project-tech-badge">PostgreSQL</span>
+                <span class="project-tech-badge">JWT Auth</span>
+                <span class="project-tech-badge">GitFlow</span>
+              </div>
+            </div>
+
+            <!-- Dois Botões Obrigatórios: 'Ver Código (GitHub)' e 'Aplicação Rodando (Deploy/Live)' -->
+            <div class="project-buttons">
+              <a href="https://github.com/g4brielsiq" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-code">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span>Ver Código (GitHub)</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/lucasgabrieldeveloper" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-live">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Aplicação Rodando (Deploy/Live)</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5. CONTATO & RODAPÉ                                                       -->
+    <!-- Links diretos e acessíveis para LinkedIn, GitHub e E-mail                  -->
+    <!-- ========================================================================= -->
+    <section id="contato" class="section">
+      <div class="container">
+        
+        <div class="contact-card">
+          <span class="section-badge" style="margin-bottom: 1rem;">Conexão Direta</span>
+          <h2 class="contact-title">Vamos Construir Algo Incrível Juntos?</h2>
+          <p class="contact-desc">
+            Estou à disposição para oportunidades de Engenharia de Software Full Stack, projetos de Inteligência Artificial e colaborações em tecnologia.
+          </p>
+
+          <!-- Links Diretos e Acessíveis Obrigatórios -->
+          <div class="contact-links-grid">
+            
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/lucasgabrieldeveloper" target="_blank" rel="noopener noreferrer" class="contact-link-item" title="LinkedIn Oficial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/g4brielsiq" target="_blank" rel="noopener noreferrer" class="contact-link-item" title="Perfil GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+
+            <!-- E-mail Direto (com cópia inteligente) -->
+            <button onclick="copiarEmail(event)" class="contact-link-item" title="Clique para copiar o e-mail">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>g4brielsiqueira@gmail.com</span>
+            </button>
+
+            <!-- Currículo Lattes CNPq -->
+            <a href="http://lattes.cnpq.br/0990440691214951" target="_blank" rel="noopener noreferrer" class="contact-link-item" title="Currículo Lattes (CNPq)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Lattes CNPq</span>
+            </a>
+
+            <!-- WhatsApp Direto -->
+            <a href="https://wa.me/5582999777346?text=Ol%C3%A1%20Lucas,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" target="_blank" rel="noopener noreferrer" class="contact-link-item" title="Conversar no WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+
+          </div>
+
+          <!-- Rodapé Inferior -->
+          <div class="footer-bottom">
+            <p>&copy; 2026 Lucas Gabriel Rodrigues de Siqueira. Maceió, AL &bull; Brasil.</p>
+            <div style="display: flex; gap: 1.25rem;">
+              <a href="#inicio">Voltar ao Topo &uarr;</a>
+              <a href="https://github.com/g4brielsiq/Portifolio-g4briel" target="_blank" rel="noopener noreferrer">Repositório GitHub</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
 </body>
 </html>

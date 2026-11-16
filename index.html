@@ -1,16 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=./components/index.html">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lucas Gabriel | Portfólio</title>
-  <script>
-    // Redirecionamento canônico e instantâneo para o arquivo oficial em components/
-    window.location.replace("./components/index.html");
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Lucas Gabriel Rodrigues de Siqueira — Desenvolvedor Full Stack, pesquisador em IA e Visão Computacional." />
+  <meta name="theme-color" content="#08090d" />
+  <title>Lucas Gabriel — Full Stack • IA • Visão Computacional</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2308090d'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='55' font-family='Arial' fill='%23ffffff'%3ELG%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body style="background:#07090e; color:#94a3b8; font-family:system-ui, -apple-system, sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; margin:0;">
-  <p>Carregando portfólio... <a href="./components/index.html" style="color:#10b981; font-weight:600; text-decoration:none;">Clique aqui caso não seja redirecionado automaticamente</a>.</p>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar" id="top">
+    <a class="brand" href="#inicio" aria-label="Ir para o início"><span>LG</span><small>DEV / RESEARCH</small></a>
+    <nav class="nav" id="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#stack">Stack</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Alternar tema">◐</button>
+      <a class="cv-btn" href="Lucas_Gabriel_CV.pdf" target="_blank" rel="noreferrer">CV <span>↗</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-dot"></span> disponível para oportunidades em Software & AI</p>
+        <h1>Construo software.<br /><em>Investigo o futuro.</em></h1>
+        <p class="hero-lead">Sou <strong>Lucas Gabriel</strong>, Desenvolvedor Full Stack e pesquisador em <strong>IA & Visão Computacional</strong>. Gosto de transformar problemas reais em sistemas úteis, escaláveis e inteligentes.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projetos">Ver projetos <span>↓</span></a>
+          <a class="btn btn-ghost" href="#contato">Vamos conversar <span>↗</span></a>
+        </div>
+        <div class="quick-stats">
+          <div><strong>9.2</strong><span>IRA / UFAL</span></div>
+          <div><strong>3+</strong><span>frentes técnicas</span></div>
+          <div><strong>AI</strong><span>pesquisa aplicada</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="orb orb-a"></div><div class="orb orb-b"></div>
+        <div class="terminal-card">
+          <div class="terminal-top"><div class="dots"><i></i><i></i><i></i></div><span>lucas@dev:~</span><span>●</span></div>
+          <div class="terminal-body">
+            <div><span class="prompt">$</span> whoami</div>
+            <div class="output">lucas.gabriel // fullstack + ai</div>
+            <div><span class="prompt">$</span> focus --today</div>
+            <div class="output">building · researching · learning</div>
+            <div><span class="prompt">$</span> stack --core</div>
+            <div class="code-lines">
+              <span>01</span><b>Angular</b><b>NestJS</b><b>Python</b>
+              <span>02</span><b>React</b><b>Node.js</b><b>Docker</b>
+              <span>03</span><b>CV</b><b>DML</b><b>Edge AI</b>
+            </div>
+            <div><span class="prompt">$</span> <span class="blink">_</span></div>
+          </div>
+        </div>
+        <div class="floating-card card-ai"><span>◈</span><div><small>RESEARCH</small><strong>Deep Metric Learning</strong></div></div>
+        <div class="floating-card card-web"><span>⌘</span><div><small>ENGINEERING</small><strong>Offline-First Systems</strong></div></div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Tecnologias principais">
+      <div class="marquee-track"><span>FULL STACK</span><i>✦</i><span>ARTIFICIAL INTELLIGENCE</span><i>✦</i><span>COMPUTER VISION</span><i>✦</i><span>DEVOPS</span><i>✦</i><span>RESEARCH</span><i>✦</i><span>FULL STACK</span><i>✦</i><span>ARTIFICIAL INTELLIGENCE</span><i>✦</i></div>
+    </section>
+
+    <section class="section split-section" id="sobre">
+      <div class="section-head reveal"><span class="index">01</span><div><p class="kicker">Sobre mim</p><h2>Ciência na base.<br /><span>Produto na prática.</span></h2></div></div>
+      <div class="about-grid">
+        <div class="about-main reveal">
+          <p class="big-copy">Minha formação começou no <strong>IFBA</strong>, passou pelo desenvolvimento profissional e hoje se aprofunda na <strong>UFAL</strong>, onde uno Engenharia de Software, pesquisa e computação aplicada.</p>
+          <p>Atuo entre dois mundos que gosto de aproximar: <strong>construir sistemas reais</strong> e <strong>investigar tecnologias novas</strong>. Minha experiência passa por aplicações web, APIs, arquitetura Offline-First, sistemas embarcados e, atualmente, modelos de IA voltados à análise de imagens biomédicas.</p>
+          <div class="about-tags"><span>Maceió — AL</span><span>Ciência da Computação · UFAL</span><span>Técnico em Informática · IFBA</span></div>
+        </div>
+        <aside class="about-side reveal">
+          <div class="quote">“Rigor científico para pensar.<br /><em>Agilidade de engenharia para entregar.</em>”</div>
+          <div class="facts"><div><small>FORMAÇÃO</small><strong>Bacharelado em Ciência da Computação</strong><span>UFAL · 2024—2028</span></div><div><small>IDIOMAS</small><strong>PT · EN · ES</strong><span>Professional Working</span></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="section-head reveal"><span class="index">02</span><div><p class="kicker">Experiência</p><h2>Onde a teoria<br /><span>ganhou contexto.</span></h2></div></div>
+      <div class="timeline">
+        <article class="timeline-item featured reveal"><div class="timeline-mark">01</div><div class="timeline-meta"><span>JAN 2026 — PRESENTE</span><b>UFAL · GRUPO ORION</b></div><div class="timeline-content"><h3>PIBIC · IA & Visão Computacional</h3><p>Pesquisa aplicada em suporte ao diagnóstico de doenças parasitárias usando <strong>Deep Metric Learning</strong>, detecção de objetos, tratamento de bases desbalanceadas e otimização para <strong>Edge AI</strong>.</p><div class="chips"><span>Python</span><span>Computer Vision</span><span>Deep Learning</span><span>Edge AI</span></div></div></article>
+        <article class="timeline-item reveal"><div class="timeline-mark">02</div><div class="timeline-meta"><span>NOV 2025 — JUN 2026</span><b>SENAI · BRISA / EASY / SOFTEX</b></div><div class="timeline-content"><h3>Residência em TIC · Full Stack</h3><p>Atuação na construção de uma plataforma corporativa gamificada, integrando <strong>Angular 19</strong>, APIs REST com NestJS e PostgreSQL, dashboards e uma arquitetura <strong>Offline-First</strong>.</p><div class="chips"><span>Angular</span><span>NestJS</span><span>TypeORM</span><span>PostgreSQL</span><span>Offline-First</span></div></div></article>
+        <article class="timeline-item reveal"><div class="timeline-mark">03</div><div class="timeline-meta"><span>SET 2025 — DEZ 2025</span><b>UFAL · GAFM</b></div><div class="timeline-content"><h3>PIBIC · Sistemas Embarcados & IoT</h3><p>Desenvolvimento de firmware para controle de motores de passo, automação de instrumentação e prototipagem de <strong>PCBs</strong>, além de interface web para controle remoto.</p><div class="chips"><span>C/C++</span><span>Firmware</span><span>IoT</span><span>EasyEDA</span></div></div></article>
+        <article class="timeline-item reveal"><div class="timeline-mark">04</div><div class="timeline-meta"><span>OUT 2023 — ABR 2024</span><b>INFLUIR · ARACAJU</b></div><div class="timeline-content"><h3>Desenvolvedor Full Stack</h3><p>Desenvolvimento de APIs e interfaces com Python, FastAPI e Vue.js, autenticação JWT, GitFlow, Scrum e manutenção de serviços.</p><div class="chips"><span>Python</span><span>FastAPI</span><span>Vue.js</span><span>JWT</span><span>GitFlow</span></div></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="projetos">
+      <div class="section-head projects-head reveal"><span class="index">03</span><div><p class="kicker">Projetos & pesquisa</p><h2>Problemas reais.<br /><span>Trabalho que mostra.</span></h2></div><p class="section-note">Uma seleção dos contextos em que mais desenvolvi meu repertório técnico.</p></div>
+      <div class="project-grid">
+        <article class="project-card project-feature reveal"><div class="project-no">01 / RESEARCH</div><div class="project-art art-vision"><div class="scan-grid"></div><div class="scan-box"><span>parasite</span><b>0.97</b></div><div class="scan-box small"><span>sample</span><b>0.91</b></div></div><div class="project-info"><h3>Diagnóstico Assistido por IA</h3><p>Modelos de visão computacional para análise de parasitas em imagens microscópicas, com pesquisa em DML e execução em dispositivos móveis.</p><div class="project-footer"><div class="chips"><span>Python</span><span>CV</span><span>DML</span><span>Edge AI</span></div><span class="project-arrow">↗</span></div></div></article>
+        <article class="project-card reveal"><div class="project-no">02 / PRODUCT</div><div class="project-art art-offline"><div class="sync-ring">↻</div><div class="sync-label">OFFLINE FIRST</div><div class="node n1">APP</div><div class="node n2">LOCAL</div><div class="node n3">API</div></div><div class="project-info"><h3>Plataforma Corporativa Gamificada</h3><p>Experiência digital construída em equipe com persistência local, sincronização automática, jogos interativos e dashboards.</p><div class="project-footer"><div class="chips"><span>Angular 19</span><span>NestJS</span><span>Postgres</span></div><span class="project-arrow">↗</span></div></div></article>
+        <article class="project-card reveal"><div class="project-no">03 / EMBEDDED</div><div class="project-art art-embedded"><div class="pcb"><span>MCU</span><span>STEP</span><span>I/O</span><span>CAL</span></div><div class="trace t1"></div><div class="trace t2"></div></div><div class="project-info"><h3>Automação Microfluídica</h3><p>Firmware, controle preciso de motores de passo, prototipagem eletrônica e interface web para instrumentação experimental.</p><div class="project-footer"><div class="chips"><span>C/C++</span><span>IoT</span><span>EasyEDA</span></div><span class="project-arrow">↗</span></div></div></article>
+      </div>
+    </section>
+
+    <section class="section stack-section" id="stack">
+      <div class="section-head reveal"><span class="index">04</span><div><p class="kicker">Stack</p><h2>Ferramentas para<br /><span>pensar e construir.</span></h2></div></div>
+      <div class="stack-layout">
+        <div class="stack-main reveal">
+          <div class="stack-category"><div><small>FRONTEND</small><h3>Interfaces & experiência</h3></div><p>Componentização, responsividade, performance e aplicações SPA/SSR.</p></div>
+          <div class="tech-cloud"><span>Angular</span><span>React</span><span>Vue.js</span><span>TypeScript</span><span>JavaScript</span><span>HTML5</span><span>Tailwind CSS</span><span>Figma</span></div>
+          <div class="stack-category"><div><small>BACKEND / DATA</small><h3>Sistemas & APIs</h3></div><p>Serviços REST, autenticação, persistência e integração com dados.</p></div>
+          <div class="tech-cloud"><span>NestJS</span><span>Node.js</span><span>Python</span><span>FastAPI</span><span>Java</span><span>PostgreSQL</span><span>TypeORM</span><span>SQL</span></div>
+        </div>
+        <aside class="stack-side reveal"><div class="stack-panel"><small>INFRA & DEVOPS</small><div class="side-list"><span>Docker</span><span>Linux</span><span>Git / GitHub</span><span>CI / CD</span><span>REST APIs</span><span>Offline-First</span></div></div><div class="stack-panel accent"><small>AI & VISION</small><div class="side-list"><span>Deep Metric Learning</span><span>Computer Vision</span><span>Object Detection</span><span>Image Processing</span><span>Edge AI</span></div></div><div class="stack-panel"><small>FUNDAMENTOS</small><div class="side-list"><span>Estruturas de Dados</span><span>Teoria dos Grafos</span><span>POO</span><span>Matemática Discreta</span></div></div></aside>
+      </div>
+    </section>
+
+    <section class="section more-section">
+      <div class="section-head reveal"><span class="index">05</span><div><p class="kicker">Além do código</p><h2>Aprender também<br /><span>é construir.</span></h2></div></div>
+      <div class="more-grid">
+        <article class="more-card reveal"><span>ACADEMIA</span><h3>Pesquisa aplicada</h3><p>Transformo perguntas técnicas em experimentos, protótipos e resultados que podem chegar ao mundo real.</p></article>
+        <article class="more-card reveal"><span>COMUNIDADE</span><h3>Monitoria & colaboração</h3><p>Compartilho conhecimento, acompanho outros estudantes e acredito em ambientes em que aprender é coletivo.</p></article>
+        <article class="more-card reveal"><span>LIDERANÇA</span><h3>Organização & responsabilidade</h3><p>Também atuo em iniciativas estudantis e técnicas, desenvolvendo comunicação, organização e visão de equipe.</p></article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contato">
+      <div class="contact-bg" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="contact-inner reveal"><p class="kicker">06 · contato</p><h2>Tem um problema interessante<br /><em>para resolver?</em></h2><p>Estou aberto a oportunidades, projetos, pesquisa aplicada e boas conversas sobre tecnologia.</p><div class="contact-actions"><a class="btn btn-primary" href="mailto:g4brielsiqueira@gmail.com">Enviar e-mail <span>↗</span></a><a class="btn btn-ghost" href="https://www.linkedin.com/in/lucasgabrieldeveloper/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a><a class="btn btn-ghost" href="https://github.com/g4brielsiq" target="_blank" rel="noreferrer">GitHub <span>↗</span></a></div><div class="contact-meta"><span>Maceió, Alagoas — Brasil</span><span>g4brielsiqueira@gmail.com</span></div></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div><strong>Lucas Gabriel</strong><span>Full Stack · IA · Pesquisa</span></div><div>© 2026 · Feito com código e curiosidade.</div><a href="#top">Voltar ao topo ↑</a></footer>
+  <script src="script.js"></script>
 </body>
 </html>

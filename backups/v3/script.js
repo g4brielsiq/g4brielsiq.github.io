@@ -1,0 +1,10 @@
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('nav');
+const themeToggle=document.getElementById('themeToggle');
+menuBtn?.addEventListener('click',()=>nav.classList.toggle('open'));
+nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const savedTheme=localStorage.getItem('lucas-theme');
+if(savedTheme==='light')document.body.classList.add('light');
+themeToggle?.addEventListener('click',()=>{document.body.classList.toggle('light');localStorage.setItem('lucas-theme',document.body.classList.contains('light')?'light':'dark');});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
